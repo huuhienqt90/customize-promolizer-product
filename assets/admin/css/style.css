@@ -1,0 +1,27 @@
+.wrap.izw_promolizers p.submit .button-primary{
+    float: right;
+}
+.wrap.izw_promolizers .form-wrap p.submit .button-primary{
+    margin-right: 20px;
+}
+input.hex_code, input#setup_charge, input.wid80{
+    width: 80px;
+}
+.wrap.izw_promolizers input[type="checkbox"] {
+    width: auto;
+}
+.izwImageThubnail{
+    max-width: 60px;
+    float: left;
+    margin-right: 20px;
+}
+.izwImageThubnail img{
+    width: 100%;
+}
+img.removeColumn,img.addColumn{
+    cursor: pointer;
+}
+.column_name td:last-child{
+    width: 45px;
+    padding: 5px;
+}

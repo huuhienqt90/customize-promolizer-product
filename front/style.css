@@ -1,0 +1,455 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.product_color_page form.cart
+{
+    border-bottom: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Aaron - 3/13/2014 */
+.product_color_page form.cart #progressbar
+{
+    /*margin: 30px 0 0;*/
+    overflow: hidden;
+    counter-reset: step;
+    text-align: center;
+}
+
+.product_color_page form.cart #progressbar li
+{
+    list-style-type: none;
+    color: #2C3E50;
+    text-transform: uppercase;
+    /*font-size: 9px;*/
+    font-size: 13px;
+    font-size: 0.8em;
+    float: left;
+    position: relative;
+    width: 25%;
+}
+
+.product_color_page form.cart #progressbar li:before
+{
+    content: counter(step, decimal);
+    counter-increment: step;
+    width: 20px;
+    line-height: 20px;
+    display: block;
+    /*font-size: 10px;*/
+    font-size: 15px;
+    font-size: 1.17em;
+    color: #333;
+    background: none repeat scroll 0% 0% #FFF;
+    border-radius: 3px;
+    margin: 0px auto 5px;
+    border: 1px solid rgba(44, 62, 80, 0.6);
+}
+
+.product_color_page form.cart #progressbar li:after
+{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: none repeat scroll 0% 0% rgba(44, 62, 80, 0.2);
+    position: absolute;
+    left: -50%;
+    top: 10px;
+    z-index: -1;
+}
+
+.product_color_page form.cart #progressbar li:first-child:after
+{
+    content: none;
+}
+
+.product_color_page form.cart #progressbar li.active:before,
+.product_color_page form.cart #progressbar li.active:after
+{
+    background: none repeat scroll 0% 0% #27AE60;
+    color: #FFF;
+}
+/* END - 3/13/2014 */
+
+
+/* Aaron - 3/22/2014 */
+.product_color_page form.cart fieldset
+{
+    display: block;
+}
+fieldset {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0 0 24px;
+    padding: 11px 4px 0;
+}
+.product_color_page form.cart fieldset:not(:first-of-type)
+{
+    /* display: none;*/
+}
+/* END - 3/22/2014 */
+
+.product_color_page form.cart .action-button.next
+{
+    float: right;
+}
+
+/* Fix for WooCommerce's 'frontend.css' not
+ * clearing their floats and the bounding box
+ * of the div is not showing correctly, and therefore
+ * their error is affecting our jQuery functions that
+ * rely on the div's 'height' and 'top' properties.
+ */
+.product_color_page form.cart fieldset div.product-addon
+{
+    overflow: hidden;
+    clear: both;
+}
+
+.product-addon span.addon
+{
+    display: inline-block;
+    height: 75px;
+    margin: 0 5px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 0 3px #FFF, 0 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.product-addon span.addon:active,
+.product-addon span.addon:hover
+{
+    box-shadow: 0 0 0 3px #FFF, 0 0 0 5px #F90;
+}
+
+.product-addon span.addon.selected
+{
+    box-shadow: 0 0 0 3px #FFF, 0 0 0 5px #27AE60;
+}
+
+.product-addon .addon#qty-slider
+{
+    line-height: 0;
+    /*margin: 0 0.8em 2em;*/
+    width: 10em;
+    float: left;
+}
+
+.product-addon .addon#qty-text
+{
+    width: 4em;
+    height: 2em;
+    margin-top: -0.5em;
+    /*float: left;*/
+}
+
+.product-addon span.addon.addon-color-swatch
+{
+    height: 0;
+    padding: 15px;
+    /*border-radius: 20px;*/
+    border-radius: 0;
+}
+.product-addon span.addon.addon-thread-color-swatch
+{
+    height: 0;
+    padding: 15px;
+    /*border-radius: 20px;*/
+    border-radius: 0;
+}
+
+.product-addon .addon#black {
+    background-color: rgb(0, 0, 0);
+}
+
+.product-addon .addon#red {
+    background-color: rgb(255, 0, 0);
+}
+
+.product-addon .addon#green {
+    background-color: rgb(0, 255, 0);
+}
+
+.product-addon .addon#yellow {
+    background-color: rgb(255, 255, 0);
+}
+
+.product-addon .addon#gray {
+    background-color: rgb(153, 153, 153);
+}
+
+.product-addon .addon#purple {
+    background-color: rgb(255, 0, 255);
+}
+
+.product-addon .addon#blue {
+    background-color: rgb(0, 0, 255);
+}
+
+.product-addon .addon#orange {
+    background-color: rgb(255, 153, 0);
+}
+
+.product-addon span.addon.addon-imprint-type
+{
+    width: 250px;
+}
+
+.product-addon span.addon.addon-imprint-location
+{
+    width: 75px;
+}
+
+form.cart .block-overlay
+{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+    left: 0px;
+    width: 100%;
+    z-index: 1000;
+}
+
+form.cart .block-overlay p.msg
+{
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    text-align: center;
+}
+
+form.cart .error
+{
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    border-radius: 4px;
+    padding: 0 6px;
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+form.cart .error p
+{
+    margin: 0;
+}
+
+.help
+{
+    /*display: inline-block;*/
+    display: none;
+    position: fixed;
+    /*left: 1570px;*/
+    left: 1560px;
+    /*top: 300px;*/
+    top: 385px;
+    /*padding: 5px;*/
+    padding: 15px;
+
+    background-color: #FDF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    max-width: 300px;
+    z-index: 9999;
+}
+
+.help > span
+{
+    font-size: 14px;
+    text-decoration: underline;
+    text-transform: uppercase;
+    display: block;
+}
+
+.help > p
+{
+    display: inline-block;
+    font-size: 11px;
+    padding: 0 4px;
+}
+div#list_color {
+    border: 2px solid silver;
+}
+div.colorTitle {
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    background: silver;
+}
+.colorTitle h3 {
+    margin: 0px 0px 1px 0px;
+}
+div.colorContent {
+    padding: 0px 10px 10px 10px;
+}
+label.labelSize {
+    display: inline-block;
+    width: 75px;
+    margin-bottom: 5px;
+}
+input.threadcolorinput {
+    width: 40px;
+}
+
+.product_color_page {
+    margin: 20px auto;
+    width: 80%;
+}
+.quantity_product {
+    width: 600px;
+    float: left;
+    padding-right: 20px;
+    border-right: 4px solid #ddd;
+}
+.sub_total {
+    float: left;
+    width: 330px;
+}
+.sub_total_table {margin: 0 10px;}
+.sub_total_table span {
+    float: right;
+}
+.sub_total_table > p {
+    color: red;
+    text-align: center;
+}
+.quantity table tbody tr:last-child {
+    color: red;
+}
+.embroidery_imprint_type {
+    float: left;
+    width: 300px;
+}
+.embroidery_imprint_type p {
+    color: yellow;
+    text-align: center;
+}
+.embroidery_imprint_type > h4 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 17px;
+}
+.required-product-addon.product-addon.product-addon-imprint-location {
+    float: left;
+    width: 600px;
+}
+.imprint_color .addon {
+    width: 50px;
+}
+
+.ColorSize {
+    float: left;
+    width: 600px;
+}
+.chose_color {
+    border-right: 1px solid #ddd;
+    width: 200px;
+}
+.additional {
+    float: left;
+    width: 600px;
+}
+.form-row.form-row-wide.product-addon {
+    padding-right: 20px;
+}
+.screen_check {
+    border-right: 2px solid #ddd;
+    display: inline-block;
+}
+.screen_check_color {
+    display: inline-block;
+    left: 20px;
+    position: relative;
+}
+.screen_check_colors {
+    display: inline-block;
+    left: 20px;
+    bottom: 68px;
+    position: relative;
+}
+/* responsive*/
+@media screen and (min-width: 1280px) {
+
+    .product_color_page {
+        width: 80% !important;
+    }
+    .additional{width: 600px!important;}
+    .ColorSize {
+        width: 600px !important;
+    }
+    .quantity_product {
+        padding-right: 20px!important;
+        width: 600px !important;
+    }
+    .required-product-addon.product-addon.product-addon-imprint-location{width: 600px!important;}
+    .sub_total {
+        width: 300px !important;
+    }
+}
+@media screen and (min-width: 1024px) {
+
+
+}
+@media screen and (min-width: 980px) {
+    .product_color_page {
+        width: 100%;
+    }
+    .quantity_product{width:100%;padding-right: 0px;}
+    .sub_total{width: 100%;}
+    .required-product-addon.product-addon.product-addon-imprint-location{ width: 100%;}
+    .additional{width: 100%;}
+}
+@media screen and (min-width: 800px) {
+    .product_color_page {
+        width: 100%;
+    }
+    .additional{width: 100%;}
+    .ColorSize{width: 100%;}
+    .required-product-addon.product-addon.product-addon-imprint-location{ width: 100%;}
+    .quantity_product{width: 100%;padding-right: 0px;}
+    .sub_total{width: 100%;}
+}
+@media screen and (min-width: 768px) {
+    .product_color_page {
+        width: 100%;
+    }
+    .additional{width: 100%;}
+    .ColorSize{width: 100%;}
+    .required-product-addon.product-addon.product-addon-imprint-location{ width: 100%;}
+    .quantity_product{width: 100%;padding-right: 0px;}
+    .sub_total{width: 100%;}
+
+}
+@media screen and (min-width: 640px) {
+    .product_color_page {
+        width: 100%;
+    }
+    .additional{width: 100%;}
+    .ColorSize{width: 100%;}
+    .required-product-addon.product-addon.product-addon-imprint-location{ width: 100%;}
+    .quantity_product{width: 100%;padding-right: 0px;}
+    .sub_total{width: 100%;}
+
+}
+@media screen and (min-width: 360px) {
+    .product_color_page {
+        width: 100%;
+    }
+    .additional{width: 100%;}
+    .ColorSize{width: 100%;}
+    .required-product-addon.product-addon.product-addon-imprint-location{ width: 100%;}
+    .quantity_product{width: 100%;padding-right: 0px;}
+    .sub_total{width: 100%;}
+
+}
+@media screen and (min-width: 320px) {
+    .product_color_page {
+        width: 100%;
+    }
+    .additional{width: 100%;}
+    .ColorSize{width: 100%;}
+    .required-product-addon.product-addon.product-addon-imprint-location{ width: 100%;}
+    .quantity_product{width: 100%;padding-right: 0px;}
+    .sub_total{width: 100%;}
+
+}

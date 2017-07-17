@@ -1,0 +1,439 @@
+/* Style BY jerry Tran */
+
+@charset "utf-8";
+/* CSS Document */
+.product_color_page form.cart
+{
+    border-bottom: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.product_color_page form.cart #progressbar
+{
+    /*margin: 30px 0 0;*/
+    overflow: hidden;
+    counter-reset: step;
+    text-align: center;
+}
+.product_color_page form.cart #progressbar li
+{
+    list-style-type: none;
+    color: #2C3E50;
+    text-transform: uppercase;
+    /*font-size: 9px;*/
+    font-size: 13px;
+    font-size: 0.8em;
+   display: table-cell;
+    position: relative;
+    width: 25%;
+}
+
+.product_color_page form.cart #progressbar li:before
+{
+    content: counter(step, decimal);
+    counter-increment: step;
+    width: 20px;
+    line-height: 20px;
+    display: block;
+    /*font-size: 10px;*/
+    font-size: 15px;
+    font-size: 1.17em;
+    color: #333;
+    background: none repeat scroll 0% 0% #FFF;
+    border-radius: 3px;
+    margin: 0px auto 5px;
+    border: 1px solid rgba(44, 62, 80, 0.6);
+}
+
+.product_color_page form.cart #progressbar li:after
+{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: none repeat scroll 0% 0% rgba(44, 62, 80, 0.2);
+    position: absolute;
+    left: -50%;
+    top: 10px;
+    z-index: 1;
+}
+
+.quantity.buttons_added table tbody tr td {
+    padding-right: 5px;
+}
+.product_color_page form.cart #progressbar li:first-child:after
+{
+    content: none;
+}
+
+.izwSale {
+    text-decoration: line-through;
+}
+.locationmulti{
+    display:none;
+}
+.product_color_page form.cart #progressbar li.active:before,
+.product_color_page form.cart #progressbar li.active:after
+{
+    background: none repeat scroll 0% 0% #27AE60;
+    color: #FFF;
+}
+
+.product_color_page form.cart fieldset
+{
+    display: block;
+}
+
+.product_color_page form.cart fieldset:not(:first-of-type)
+{
+    /* display: none;*/
+}
+
+
+.product_color_page form.cart .action-button.next
+{
+    float: right;
+}
+
+/* Fix for WooCommerce's 'frontend.css' not
+ * clearing their floats and the bounding box
+ * of the div is not showing correctly, and therefore
+ * their error is affecting our jQuery functions that
+ * rely on the div's 'height' and 'top' properties.
+ */
+.product_color_page form.cart fieldset div.product-addon
+{
+    overflow: hidden;
+    clear: both;
+}
+
+.product-addon span.addon
+{
+    display: inline-block;
+    height:auto;
+    margin: 0 5px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 0 3px #FFF, 0 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.product-addon span.addon:active,
+.product-addon span.addon:hover
+{
+    box-shadow: 0 0 0 3px #FFF, 0 0 0 5px #F90;
+}
+
+.product-addon span.addon.selected
+{
+    box-shadow: 0 0 0 3px #FFF, 0 0 0 5px #27AE60;
+}
+
+.product-addon .addon#qty-slider{line-height: 0;/*margin: 0 0.8em 2em;*/width: 10em;float: left;}
+.addon-name {padding-bottom: 8px;}
+.product-addon .addon#qty-text{width: 4em;/*float: left;*/}
+.product-addon span.addon.addon-color-swatch
+{
+    height: 0;
+    padding: 13px;
+    /*border-radius: 20px;*/
+    border-radius: 0;
+}
+.product-addon span.addon.addon-thread-color-swatch
+{
+    height: 0;
+    padding: 15px;
+    /*border-radius: 20px;*/
+    border-radius: 0;
+}
+
+.product-addon .addon#black {background-color: rgb(0, 0, 0);}
+.product-addon .addon#red {background-color: rgb(255, 0, 0);}
+.product-addon .addon#green {background-color: rgb(0, 255, 0);}
+.product-addon .addon#yellow {background-color: rgb(255, 255, 0);}
+.product-addon .addon#gray {background-color: rgb(153, 153, 153);}
+.product-addon .addon#purple {background-color: rgb(255, 0, 255);}
+.product-addon .addon#blue {background-color: rgb(0, 0, 255);}
+.product-addon .addon#orange {background-color: rgb(255, 153, 0);}
+.product-addon span.addon.addon-imprint-type{width: 90%;}
+form.cart .block-overlay
+{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+    left: 0px;
+    width: 100%;
+    z-index: 1000;
+}
+
+form.cart .block-overlay p.msg
+{
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    text-align: center;
+}
+
+form.cart .error
+{
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    border-radius: 4px;
+    padding: 0 6px;
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+form.cart .error p{margin: 0;}
+
+.help{
+    /*display: inline-block;*/
+    display: none;
+    position: fixed;
+    /*left: 1570px;*/
+    left: 1560px;
+    /*top: 300px;*/
+    top: 385px;
+    /*padding: 5px;*/
+    padding: 15px;
+
+    background-color: #FDF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    max-width: 300px;
+    z-index: 9999;
+}
+
+.help > span{font-size: 14px;text-decoration: underline;text-transform: uppercase;display: block;}
+
+.help > p{display: inline-block;font-size: 11px;padding: 0 4px;}
+div.colorTitle {font-weight: bold;text-align: center;cursor: pointer;}
+#colorID_red > h3 {background: silver;}
+.colorTitle h3 {margin: 0px 0px 1px 0px; background:silver;}
+div.colorContent {padding: 0px 10px 10px 10px;}
+.imprint_color > input {width: 49%;}
+label.labelSize {float: left;width: 60px;margin-bottom: 5px;}
+input.threadcolorinput {width: 40px;}
+.product_color_page {margin: 20px auto;width: auto;}
+#addtoCartBox > ul {padding-top: 20px;padding-bottom: 20px;display: table; width: 100%;}
+.quantity_product {width: 280px;float: left;
+}
+.next.action-button.button.alt{float: right!important;}
+.quantity.buttons_added {width: 50% !important;}
+.sub_total {float: left;width:100%;padding: 10px 0px;}
+.sub_total_table > h4 {padding: 3px 10px;}
+/*.sub_total_table {border-left: 3px solid #ddd;}*/
+.sub_total_table span {float: right;}
+.sub_total_table > p {color: red;text-align: center;}
+.sub_total_table_step3 > h4 {padding: 4px;}
+.quantity table tbody tr:last-child {color: red;}
+.embroidery_imprint_type {float: left;width: 35%;text-align: center;margin: 0 3px 20px;}
+.embroidery_imprint_type p {color: yellow;text-align: center;}
+.embroidery_imprint_type > h4 {font-weight: bold;text-align: center;font-size: 17px;}
+.required-product-addon.product-addon.product-addon-imprint-location {
+    float: left;
+    width: 376px;
+}
+.addon-name {padding-bottom: 10px;}
+.imprint_color .addon {width: 20px;position: relative;bottom: 10px;}
+.ColorSize {float: left;width: auto;padding-top: 30px;}
+.delete_color_class {display: none;}
+.screen_check_embroidery {border-right: 2px solid #ddd;float: left;width: 34%;}
+.screen_check_color_embroidery {float: left;width: 65%;}
+.sub_total_step3 .sub_total_table > h4 {padding-top: 8px;}
+.sub_total_step3 {float: left;width: 228px;padding-top: 30px;}
+.chose_color {border-right: 1px solid #ddd;width: 200px;}
+/*.product_color_page form.cart fieldset div.product-addon{width: 100%;padding-top: 30px;}*/
+.additional {float: left;width: 56%;}
+.sub_totals {float: left;width: 100%;padding-bottom: 10px;}
+.add-to-cart.action-button.button.alt {float: right;}
+/* responsive*/
+@media screen and (min-width: 1280px) {
+    .quantity_product{
+        width: 280px!important;
+    }
+    /*.form-row.form-row-wides{width: auto!important}*/
+    .embroidery_imprint_type{width: 47%!important;}
+    .screen_check_embroidery{width: 34%!important;}
+    .screen_check_color_embroidery{width: 65%!important}
+}
+/*@media screen and (min-width: 800px) {
+    .product_color_page {
+        width: 500px!important;
+    }
+}*/
+@media screen and (min-width: 320px) {
+    .screen_check_embroidery{width: 100%;}
+    .screen_check_color_embroidery{width: 100%;}
+    .sub_totals {width: 100%;}
+    .embroidery_imprint_type {width: 100%;}
+    .form-row.form-row-wides{width: 100%}
+    .quantity_product{width: 100%;}
+    .sub_total {width: 100%;}
+    /*.screen_check_color{position: relative;}*/
+    .quantity.buttons_added {width: 100% !important;}
+    /*.additional{
+        width: 100%;
+    }
+    .additional > textarea{
+        width: 100%;
+    }*/
+
+}
+/*.screen_check_color {display: inline-block;position:absolute;}*/
+.screen_check_colors {display: inline-block;}
+.form-row.form-row-wide.product-addon {padding-right: 20px;}
+.screen_check {border-right: 2px solid #ddd;display: inline-block;}
+.quantity table tr:first-child {border-bottom: 1px solid #ddd;}
+.quantity table {border-collapse: collapse;}
+.quantity table tr td:first-child {border-right: 1px solid #ddd;}
+.form-row.form-row-wides > p {font-weight: bold;text-align: center;}
+.form-row.form-row-wides {display: inline-block;font-size: 10px;height: auto; text-align: center;}
+form.cart fieldset:not(:first-of-type) {display: block;padding-bottom: 10px;}
+.addon.addon-total-quantity.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all {
+    display: inline-block;
+    margin: 0 20px;
+    width: 200px;
+}
+.addon.color_changes {width: 9%;}
+.next.action-button.button.alt ,.previous.action-button.button.alt{
+    background: none repeat scroll 0 0 #ffe199!important;
+    border-color: #76456c!important;
+    color: #000!important;
+}
+.plus ,.minus {display: none !important;}
+.form-row.form-row-wides {padding: 2px!important;}
+.romoship {background:url("../images/romoship.png") no-repeat;height: 26px;}
+.checkedcolor {display: none; padding: 0 10px;width: 400px;}
+/*.vehicle {padding: 0 10px;width: 300px;}*/
+.description {padding: 0 15px;}
+/*.product_color_page fieldset {padding:10px;border-bottom: 2px solid #ddd;}*/
+.product_color_page fieldset:last-child {border-bottom: none;}
+/*.selected_option_box {*/
+    /*border-bottom: 2px solid #ddd;*/
+/*}*/
+
+
+/* Css Add By Thach*/
+form.cart fieldset:not(:first-of-type) {
+  display: none;
+}
+.product_color_page .sub_total {
+    border-top: 2px solid #ddd;
+}
+.product_color_page .izw_content_single{
+  float: left;
+  width: 70%;
+}
+.product_color_page .izw_sidebar {
+  border-left: 3px solid #ddd;
+  float: right;
+  padding: 1%;
+  width: 27%;
+}
+.product_color_page #progressbar{
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+.product_color_page .savingstep1{
+    color:#f7b738;
+}
+.product_color_page h4,.product_color_page p,.product_color_page h3{
+    margin:0;
+}
+.product_color_page .selected_option_box > h3{
+  text-align: center;
+}
+.product_color_page .chose_color{
+    padding:6px 15px;
+    border-right:0 none;
+}
+.product-addon span.addon.addon-imprint-type {
+  width: 200px;
+  overflow: hidden;
+}
+.product_color_page form.cart .action-button.next,.product_color_page .variations_button{
+    bottom: 12px;
+    float: right;
+    position: absolute;
+    right: 15px;
+}
+.product_color_page .embroidery_imprint_type p{
+    color:#f7b738;
+}
+.product_color_page .info_step1,.info_step2,.info_step3{
+  margin: 13px 0 ;
+}
+.product_color_page .form-row.form-row-wides{
+  width: 90px;/*27%;*/
+}
+.product_color_page .form-row.form-row-wides{
+    font-size:14px;
+}
+.product_color_page .single-product .summary form.cart{
+    padding:1em 1em 2em;
+}
+.product_color_page .previous.action-button.button.alt {
+  bottom: 12px;
+  left: 30px;
+  position: absolute;
+}
+.product_color_page div#list_color{
+    border:0 none;
+    /*margin-bottom:20px;*/
+}
+.product_color_page .form-row.form-row-wide.product-addon {
+  padding-right: 3px;
+}
+.product_color_page .check_all {
+  float: left;
+}
+.product_color_page .colorContent > p{
+    padding-bottom:20px;
+}
+.product_color_page .form-row.form-row-wide{
+    margin-bottom: 20px;
+}
+.product_color_page #list_color{
+    margin-bottom:50px;
+}
+.product_color_page .screen_check_color {
+  float: right;
+  width: 62%;
+}
+.product_color_page .checkedcolor{
+    width:auto;
+}
+.product_color_page .checkedcolor .input {
+  float: left;
+  width: 50%;
+}
+.product_color_page label.labelSize{
+    float:none;
+}
+.product_color_page .stepinputcolor {
+  width: 50% ;
+}
+.product_color_page .addcolor > div {
+  margin-bottom: 10px;
+}
+.product_color_page .checkedcolor button {
+  background: none repeat scroll 0 0 #ffe199;
+  border: 2px solid #ffb500;
+  float: left;
+  font-weight: bolder;
+  margin-right: 10px;
+  padding: 5px;
+}
+.product_color_page .info_step3 .imprint{
+  float: left;
+  width: 100%;
+}
+.product_color_page .info_step3 .color{
+  float: right;
+  width: 90%;
+}
+.product_color_page .info_step3 > div {
+  float: right;
+  width: 80%;
+}
+.product_color_page form.cart {
+  padding-bottom: 40px !important;
+}
